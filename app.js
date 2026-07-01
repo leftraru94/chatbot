@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbygU_HRR6H-IDR_knBe8l4xZl7dDi1vO8UefEIcG4y2ZutZZx_aHt3jzO3fhmwjBiiKjg/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycby1Si0Y6E0W9sFQAeg8zJ3XisHO7YpSXbRe0ixxIkuSkkRyTPYIhZMSqcdIis1LQGa0zA/exec";
 
 function sendMessage() {
 
