@@ -3,7 +3,7 @@ const API_URL = "https://script.google.com/macros/s/AKfycbygU_HRR6H-IDR_knBe8l4x
 function sendMessage() {
 
     const input = document.getElementById("userInput");
-    const text = input.value;
+    const text = input.value.trim();
 
     if (!text) return;
 
@@ -12,6 +12,9 @@ function sendMessage() {
 
     fetch(API_URL, {
         method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify({ message: text })
     })
     .then(res => res.json())
@@ -19,7 +22,7 @@ function sendMessage() {
         addMessage(data.reply, "bot");
     })
     .catch(() => {
-        addMessage("Error de conexión", "bot");
+        addMessage("Error de conexión con el servidor", "bot");
     });
 }
 
@@ -32,5 +35,5 @@ function addMessage(text, type) {
     div.innerText = text;
 
     chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
 }
-
